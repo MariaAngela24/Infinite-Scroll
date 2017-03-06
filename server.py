@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import json
-from pprint import pprint
+#from pprint import pprint
 
 app = Flask(__name__)
 
@@ -15,8 +15,9 @@ app = Flask(__name__)
 
 def index():
     with open('pins_formatted.json') as data_file:    
-        #data = json.load(data_file)
-        data = json.parse(data_file)
+        data = json.load(data_file)
+        #data = json.parse(data_file)
+        #pprint(data)
     return render_template("page_of_pins.html")
 
 if __name__ == "__main__":
